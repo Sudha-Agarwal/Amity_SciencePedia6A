@@ -15,6 +15,10 @@
 	 <link href="css/ken-burns.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css
+" rel="stylesheet">
 
   </head>
 <body>
@@ -77,12 +81,12 @@
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				   <ul class="nav navbar-nav navbar">
-					<li class="active_1"><a class="color_1" href="index.html">HOME</a></li>
-					<li><a class="color_1" href="project.html">AWARDS</a></li>
-					 <li><a class="color_1" href="team.html">TEAM</a></li>					 
-
-				   </ul>
+					<ul class="nav navbar-nav navbar">
+						<li class="active_1"><a class="color_1" href="index.html">HOME</a></li>
+						<li><a class="color_1" href="about.html">ABOUT</a></li>
+						<li><a class="color_1" href="project.html">AWARDS</a></li>
+						<li><a class="color_1" href="team.html">TEAM</a></li>					 
+					 </ul>
 				</div>
 				<!-- /.navbar-collapse -->
 			</nav>
@@ -381,7 +385,7 @@
 			  </div>
 			  <div class="col-sm-12 space_all">
 			   <div class="footer_3">
-				<input type="text" class="form-control" placeholder="Name">
+				<input type="text" class="form-control" placeholder="Name" id="name">
 			   </div>
 			  </div>
 			  <div class="col-sm-12 space_all">
@@ -398,7 +402,7 @@
 		 
 			  <div class="col-sm-12 space_all">
 			   <div class="footer_5 clearfix">
-				<p><a href="#">SEND</a></p>
+				<p><a href="#" onclick="showAlert()">SEND</a></p>
 			   </div>
 			  </div>
 	   </div>
@@ -525,6 +529,17 @@ $(document).ready(function(){
 		});	
 		
 });
+
+function showAlert() {
+	var name = document.getElementById('name').value;
+    Swal.fire({
+      title: `Hello ${name}`,
+      text: 'Thanks for your feedback',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+  }
+
 	</script>
 </body>
        
